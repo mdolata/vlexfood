@@ -6,12 +6,11 @@
     <title>Opinia</title>
 </head>
 <body>
-    <form:form action="opinionConfirm" method="GET">
-
-        Nick <input type="text" name="name"/>
+    <form:form action="opinionConfirm" modelAttribute="opinion" method="GET">
+        Nick: <form:input path="name"/>
         <br>
-        Opinie, wskazowki: <br>
-        <textarea name="opinion" rows="5" cols="50">Twoja opinia sie dla nas liczy.</textarea>
+        Opinia, wskazowki: <br>
+        <form:textarea path="description" rows="5" cols="50"/>
         <br>
         <input type="submit" value="Wyslij" />
     </form:form>

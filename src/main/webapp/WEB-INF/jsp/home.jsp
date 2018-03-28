@@ -1,4 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +9,26 @@
 </head>
 <body>
 ${message}
-Welcome at Mateusz's funpage.
+Witaj na stronie Mateusza!
 <br>
-You can order healthy lunch at work <a href="/food">here</a>
+Mozesz zamowic zdrowy obiad do pracy <a href="/food">tutaj</a>
 <br>
-<a href="/opinion">There</a> you can send something nice about this site :)
+<a href="/opinion">Tutaj</a> mozesz napisac cos milego o tej stronie :)
 
+<br><br>
+<c:choose>
+    <c:when test="${not empty opinions}">
+        Dodane opinie:
+        <br>
+        <c:forEach items="${opinions}" var="opinion">
+            ${opinion.name}: ${opinion.dateIns}<br>
+            ${opinion.description}<br><br>
+        </c:forEach>
+    </c:when>
+    <c:otherwise>
+            Nie dodano jeszcze zadnej opini o tej stronie <br>
+            Badz pierwszy! Dodaj opinie <a href="/opinion">tutaj</a>
+     </c:otherwise>
+</c:choose>
 </body>
 </html>
