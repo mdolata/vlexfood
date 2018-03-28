@@ -15,7 +15,7 @@
         <br>
         Token: <input type="text" name="token"/>
         <br>
-        <input type="submit" value="Wyślij" />
+        <input type="submit" value="Wyslij" />
     </form:form>
 </body>
 </html>
