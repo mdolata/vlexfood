@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Map;
+
 @Controller
 @RequestMapping(value = "/food")
 public class FoodController {
@@ -22,6 +24,9 @@ AuthService authService;
     public String showMenu(Model model){
         Restaurant restaurant = repository.getRestaurant() != null ? repository.getRestaurant() : Restaurant.emptyRestaurant();
         model.addAttribute("restaurant", restaurant);
+
+        Map<String, String> orders = repository.getOrders();
+        model.addAttribute("orders", orders);
         return "menuPage";
     }
 
@@ -43,5 +48,17 @@ AuthService authService;
         return "addRestaurantForm";
     }
 
+    @RequestMapping("/newOrder")
+    public String addNewOrder(){
+        return "newOrder";
+    }
 
+    @RequestMapping("/newOrderConfirm")
+    public String addNewOrderConfirm(@RequestParam("name")String name,
+                                     @RequestParam("orderDescription")String orderDescription){
+
+        repository.addNewOrder(name,orderDescription);
+
+        return "redirect:/food";
+    }
 }
