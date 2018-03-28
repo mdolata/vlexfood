@@ -21,11 +21,11 @@ public class Repository {
         this.restaurant = restaurant;
     }
 
-    public String addNewOrder(String name, String order){
+    public String addNewOrder(String name, String order) {
         return orders.putIfAbsent(name, order);
     }
 
-    public Map<String, String> getOrders(){
+    public Map<String, String> getOrders() {
         return orders;
     }
 }

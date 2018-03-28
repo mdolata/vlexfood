@@ -17,7 +17,7 @@ public class AuthService {
 
     }
 
-    public Boolean isAuth(String token){
+    public Boolean isAuth(String token) {
         return tokens.contains(token);
     }
 

@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     @RequestMapping("/")
-    public String home(){
+    public String home() {
         return "home";
     }
 
     @RequestMapping("/opinion")
-    public String opinionForm(){
+    public String opinionForm() {
         return "opinionForm";
     }
 
     @RequestMapping("/opinionConfirm")
-    public String opinionFormConfirm(){
+    public String opinionFormConfirm() {
         return "home";
     }
 

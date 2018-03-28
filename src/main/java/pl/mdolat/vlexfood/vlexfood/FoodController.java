@@ -14,14 +14,14 @@ import java.util.Map;
 @RequestMapping(value = "/food")
 public class FoodController {
 
-@Autowired
-Repository repository;
+    @Autowired
+    Repository repository;
 
-@Autowired
-AuthService authService;
+    @Autowired
+    AuthService authService;
 
     @RequestMapping("")
-    public String showMenu(Model model){
+    public String showMenu(Model model) {
         Restaurant restaurant = repository.getRestaurant() != null ? repository.getRestaurant() : Restaurant.emptyRestaurant();
         model.addAttribute("restaurant", restaurant);
 
@@ -31,16 +31,16 @@ AuthService authService;
     }
 
     @RequestMapping(value = "/restaurant")
-    public String addRestaurant(Model model){
+    public String addRestaurant(Model model) {
         model.addAttribute("restaurant", new Restaurant());
         return "addRestaurantForm";
     }
 
     @RequestMapping(value = "/restaurantConfirm")
     public String verifyRestaurant(@ModelAttribute("restaurant") Restaurant restaurant,
-                                   @RequestParam("token") String token){
+                                   @RequestParam("token") String token) {
 
-        if (authService.isAuth(token)){
+        if (authService.isAuth(token)) {
             repository.setRestaurant(restaurant);
             return "redirect:/food";
         }
@@ -49,15 +49,15 @@ AuthService authService;
     }
 
     @RequestMapping("/newOrder")
-    public String addNewOrder(){
+    public String addNewOrder() {
         return "newOrder";
     }
 
     @RequestMapping("/newOrderConfirm")
-    public String addNewOrderConfirm(@RequestParam("name")String name,
-                                     @RequestParam("orderDescription")String orderDescription){
+    public String addNewOrderConfirm(@RequestParam("name") String name,
+                                     @RequestParam("orderDescription") String orderDescription) {
 
-        repository.addNewOrder(name,orderDescription);
+        repository.addNewOrder(name, orderDescription);
 
         return "redirect:/food";
     }
