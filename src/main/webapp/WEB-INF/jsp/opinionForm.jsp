@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello world</title>
+    <title>Opinia</title>
 </head>
 <body>
     <form:form action="opinionConfirm" method="GET">

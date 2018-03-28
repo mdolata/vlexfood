@@ -3,9 +3,10 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Hello world</title>
+    <title>Dzisiejsze zamowienie</title>
 </head>
 <body>
+${message}
 Dzisiaj zamawiamy w ${restaurant.name}
 <br>
 Koszt dowozu: ${restaurant.deliveryCost}

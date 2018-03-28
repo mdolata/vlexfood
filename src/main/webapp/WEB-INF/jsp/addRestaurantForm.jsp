@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello world</title>
+    <title>Dodaj nowa restauracje</title>
 </head>
 <body>
     <form:form action="restaurantConfirm" modelAttribute="restaurant" method="GET">
