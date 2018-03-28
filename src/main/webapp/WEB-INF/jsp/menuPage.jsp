@@ -14,7 +14,6 @@ Link: ${restaurant.url}
 <br><br>
 <c:choose>
     <c:when test="${restaurant.name != 'BRAK'}">
-
         Dodaj swoje zamowienie <a href="food/newOrder">tutaj</a>
 
         <br><br>
@@ -24,7 +23,7 @@ Link: ${restaurant.url}
         </c:forEach>
     </c:when>
     <c:otherwise>
-        Nie wybrano jeszcze dzisiejszej restauracji.
+        Nie wybrano jeszcze dzisiejszej restauracji.<br>
         Zadzwon do dzialu programistow by popedzic te leniwe swinie.
     </c:otherwise>
 </c:choose>
