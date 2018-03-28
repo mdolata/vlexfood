@@ -34,4 +34,9 @@ public class HomeController {
         return "redirect:/";
     }
 
+    @RequestMapping("/admin")
+    public String showAdminPage(){
+        return "admin";
+    }
+
 }
