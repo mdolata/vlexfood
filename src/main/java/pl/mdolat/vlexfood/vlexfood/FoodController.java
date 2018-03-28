@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping(value = "/food")
-public class HomeController {
+public class FoodController {
 
 @Autowired
 Repository repository;
