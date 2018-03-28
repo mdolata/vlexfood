@@ -10,4 +10,15 @@ public class HomeController {
     public String home(){
         return "home";
     }
+
+    @RequestMapping("/opinion")
+    public String opinionForm(){
+        return "opinionForm";
+    }
+
+    @RequestMapping("/opinionConfirm")
+    public String opinionFormConfirm(){
+        return "home";
+    }
+
 }
