@@ -10,6 +10,6 @@ Welcome at Mateusz's funpage.
 <br>
 You can order healthy lunch at work <a href="/food">here</a>
 <br>
-<a href="">There</a> you can send something nice about this site :)
+<a href="/opinion">There</a> you can send something nice about this site :)
 </body>
 </html>
